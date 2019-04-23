@@ -119,19 +119,19 @@ object List {
   def filterViaFlatMap[A](l: List[A])(f: A => Boolean): List[A] =
     flatMap(l)(a => if (f(a)) List(a) else Nil)
 
-
-  def add2Lists(a : List[Int], b : List[Int]) : List[Int] = (a, b) match {
-    case (Nil, _) => Nil
-    case (_, Nil) => Nil
-    case (Cons(h1,t1), Cons(h2,t2)) => Cons(h1 + h2, add2Lists(t1,t2))
+  def add2Lists(a: List[Int], b: List[Int]): List[Int] = (a, b) match {
+    case (Nil, _)                     => Nil
+    case (_, Nil)                     => Nil
+    case (Cons(h1, t1), Cons(h2, t2)) => Cons(h1 + h2, add2Lists(t1, t2))
   }
 
-  def zipWith[A,B](a : List[A], b : List[A])(f : (A, A) => B) : List[B] = (a,b) match {
-    case (Nil, _) => Nil
-    case (_, Nil) => Nil
-    case (Cons(h1,t1), Cons(h2,t2)) => Cons(f(h1,h2), zipWith(t1,t2)(f))
+  def zipWith[A, B](a: List[A], b: List[A])(f: (A, A) => B): List[B] =
+    (a, b) match {
+      case (Nil, _)                     => Nil
+      case (_, Nil)                     => Nil
+      case (Cons(h1, t1), Cons(h2, t2)) => Cons(f(h1, h2), zipWith(t1, t2)(f))
 
-  }
+    }
 
   def main(args: Array[String]): Unit = {
     val a = List(1, 2, 3, 4, 5, 6, 7)
@@ -193,11 +193,12 @@ object List {
     println(test)
     println(test(15))
 
+    //print to assert results
     println(add1(List(1, 3, 4, 5, 7, 6)))
     println(map(List(1, 2, 3, 4, 5, 6))(a => a * 2))
     println(filter(List(1, 2, 3, 4, 5, 6))(a => a % 2 == 0))
     println(flatMap(List(1, 2, 3, 4))(a => List(a, a + 1)))
     println(filterViaFlatMap(List(1, 2, 3, 4, 5, 6))(a => a % 2 == 0))
-    println(add2Lists(List(1,2,3,4), List(4,5,6)))
+    println(add2Lists(List(1, 2, 3, 4), List(4, 5, 6)))
   }
 }
