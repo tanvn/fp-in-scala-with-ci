@@ -11,6 +11,7 @@ object QueueTest {
     val add30 = add20.enQueue(30)
     println(add10)
 
+    // should test more ??
     add20.head match {
       case None        => println("None")
       case Some(value) => println(s"head is $value")
