@@ -1,3 +1,3 @@
-# samplescala
+# Functional Programming In Scala with CI
 
-samplescala is a helloworld application I like to use for demos, blogs & examples. It's a great startin point scala projects.
+Myself learning new stuff.

@@ -37,4 +37,4 @@ jobs:
       - deploy:
           command: |
               mv target/universal/fp-in-scala-with-ci.zip $CIRCLE_ARTIFACTS/$ARTIFACT_BUILD
-              aws s3 cp $CIRCLE_ARTIFACTS/$ARTIFACT_BUILD s3://devops.datapunks.org/builds/fp-in-scala-with-ci/ --metadata {\"git_sha1\":\"$CIRCLE_SHA1\"}
+              # aws s3 cp $CIRCLE_ARTIFACTS/$ARTIFACT_BUILD s3://devops.datapunks.org/builds/fp-in-scala-with-ci/ --metadata {\"git_sha1\":\"$CIRCLE_SHA1\"}
