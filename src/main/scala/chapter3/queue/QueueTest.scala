@@ -8,6 +8,7 @@ object QueueTest {
     println(initQ.isEmpty)
     val add10 = initQ.enQueue(10)
     val add20 = add10.enQueue(20)
+    // 30->20->10
     val add30 = add20.enQueue(30)
     println(add10)
 
