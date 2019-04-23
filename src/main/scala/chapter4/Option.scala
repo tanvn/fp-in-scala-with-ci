@@ -2,6 +2,8 @@ package chapter4
 
 sealed trait Option[+A] {
 
+  // my option implementations here
+
   def map[B](f: A => B): Option[B] = this match {
     case None    => None
     case Some(a) => Some(f(a))
@@ -67,15 +69,17 @@ object Option {
 
   }
 
-  def sequenceByTraverse[A](a: List[Option[A]]): Option[List[A]] = traverse(a)(a => a )
+  def sequenceByTraverse[A](a: List[Option[A]]): Option[List[A]] =
+    traverse(a)(a => a)
 
   // 2 loops, not so good
-  def traverse1[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] = sequence( a map ( e => f(e)))
+  def traverse1[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] =
+    sequence(a map (e => f(e)))
 
   // one loop but recursive
   def traverse[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] = a match {
-    case h::tail => traverse(tail)(f).flatMap(l => f(h).map(_:: l))
-    case Nil => Some(List.empty[B])
+    case h :: tail => traverse(tail)(f).flatMap(l => f(h).map(_ :: l))
+    case Nil       => Some(List.empty[B])
   }
 
   def Try[A](a: => A): Option[A] =
@@ -112,22 +116,26 @@ object Option {
     println(parseInts(List("1", "2", "3")))
     println(parseInts(List("1", "2", "3", "2a")))
 
-    println(traverse(List(1,2,3))(i => Some(i +1)))
+    println(traverse(List(1, 2, 3))(i => Some(i + 1)))
 
-    println(traverse(List(1,2,3,4,5))(i => if(i > 1) Some(i +1) else None))
+    println(
+      traverse(List(1, 2, 3, 4, 5))(i => if (i > 1) Some(i + 1) else None)
+    )
 
-    println(sequenceByTraverse(List(Some(10), Some(11), None, Some(1), Some(2))))
+    println(
+      sequenceByTraverse(List(Some(10), Some(11), None, Some(1), Some(2)))
+    )
     println(sequenceByTraverse(List(Some(1), Some(2), Some(3), Some(4))))
 
     val a1 = Some(1)
     val b1 = Some(2)
     val c1 = Some(3)
     val d1 = Some(4)
-    val e1 = a1.flatMap{
-      aa => b1.flatMap{
-        bb => c1.flatMap{
-          cc => d1.map{
-            dd => dd + aa + bb + cc
+    val e1 = a1.flatMap { aa =>
+      b1.flatMap { bb =>
+        c1.flatMap { cc =>
+          d1.map { dd =>
+            dd + aa + bb + cc
           }
         }
       }
@@ -135,14 +143,12 @@ object Option {
 
     println(e1)
     val e2 = for {
-    aa <- a1
-    bb <- b1
-    cc <- c1
-    dd <- d1
-    } yield aa + bb + cc +dd
+      aa <- a1
+      bb <- b1
+      cc <- c1
+      dd <- d1
+    } yield aa + bb + cc + dd
     println(e2)
-
-
 
   }
 
