@@ -18,6 +18,7 @@ private case class Node[T](value: Option[T], next: Option[Node[T]])
   override def enQueue(t: T): Node[T] =
     if (isEmpty) Node(Some(t), None) else Node(Some(t), Some(this))
 
+  //head
   override def head: Option[T] = value
   override def deQueue(): Node[T] = next.getOrElse(empty)
 
