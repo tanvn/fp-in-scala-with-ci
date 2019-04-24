@@ -11,6 +11,8 @@ maxRequestedChanges:
    NONE: 0
 blockingLabels:
    - blocked
+requiredLabels:
+  - merge
 
 # Will merge whenever the above conditions are met, but also
 # the owner has approved or merge label was added.
