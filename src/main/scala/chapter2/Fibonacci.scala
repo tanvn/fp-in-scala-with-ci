@@ -74,7 +74,6 @@ object Fibonacci {
     val comFunc = myCompose(plus3, string2Int)
 
     val comFuncByKeyword = plus3 compose string2Int
-    //below is not used ?
     val comFuncByKeywor2 = string2Int andThen plus3
 
     println(comFunc("30"))
