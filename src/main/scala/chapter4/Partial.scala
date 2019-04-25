@@ -5,7 +5,6 @@ sealed trait Partial[+A,+B] {
   def map[C]( f: B => C) : Partial[A, C] = this match {
     case Errors(e) => Errors(e)
     case Success(v) => Success(f(v))
-
   }
 
   def map2[EE >: A,C,D](b: => Partial[EE, C])( f: (B, C) => D) : Either[EE, D] = ???
