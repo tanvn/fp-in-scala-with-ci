@@ -2,7 +2,6 @@ package chapter4
 
 sealed trait Option[+A] {
 
-  //map with match pattern
   def map[B](f: A => B): Option[B] = this match {
     case None    => None
     case Some(a) => Some(f(a))
