@@ -15,7 +15,7 @@ object Person {
 
   def mkPerson(name: String, age: Int): Either[String, Person] =
     mkName(name).map2(mkAge(age))(Person(_, _))
-  
+
   def main(args: Array[String]): Unit = {
     println(mkPerson("David", 24))
 
