@@ -23,7 +23,6 @@ object List {
   }
 
 
-//tail
   def tail[A](a: List[A]): List[A] = a match {
     case Cons(_, xs) => xs
     case Nil         => Nil
