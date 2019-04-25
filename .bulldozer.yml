@@ -81,7 +81,7 @@ update:
   # "whitelist" defines the set of pull requests that should be updated by
   # bulldozer. It accepts the same keys as the whitelist in the "merge" block.
   whitelist:
-    labels: ["WIP", "Update Me", "merge"]
+    labels: ["merge"]
 
   # "blacklist" defines the set of pull requests that should not be updated by
   # bulldozer. It accepts the same keys as the blacklist in the "merge" block.
