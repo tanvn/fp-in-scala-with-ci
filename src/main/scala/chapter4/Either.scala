@@ -65,8 +65,7 @@ object Either {
     val testData1 = List(Right(1), Right(2), Right(3), Right(4))
     val testData2 = List(Right(1), Right(2), Right(3),Left("Not a number"), Right(5))
     val testData3 = List(1, 2, 3,4,5)
-
-
+    
     println(sequence(testData1))
     println(sequence(testData2))
     println(traverse(testData1)( v => v.map( a => a + 10)))
