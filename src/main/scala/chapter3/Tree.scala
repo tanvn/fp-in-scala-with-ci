@@ -55,7 +55,6 @@ object Tree {
 
     println(count(root))
     println(maximum(root))
-    // print root depth
     println(depth(root))
 
   }
