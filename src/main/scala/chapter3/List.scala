@@ -22,8 +22,6 @@ object List {
     case Cons(x, xs)  => x * product(xs)
   }
 
-
-//tail
   def tail[A](a: List[A]): List[A] = a match {
     case Cons(_, xs) => xs
     case Nil         => Nil
