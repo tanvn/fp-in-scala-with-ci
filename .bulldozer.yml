@@ -14,5 +14,5 @@ merge:
   delete_after_merge: false
 
 update:
-  whitelist:
-    labels: ["wip", "update me", "merge"]
+  blacklist:
+    labels: ["do-not-update"]
