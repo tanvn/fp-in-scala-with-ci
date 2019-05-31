@@ -193,7 +193,6 @@ object List {
     println(test)
     println(test(15))
 
-    //print to assert results
     println(add1(List(1, 3, 4, 5, 7, 6)))
     println(map(List(1, 2, 3, 4, 5, 6))(a => a * 2))
     println(filter(List(1, 2, 3, 4, 5, 6))(a => a % 2 == 0))
