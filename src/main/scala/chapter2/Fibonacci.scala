@@ -16,6 +16,7 @@ object Fibonacci {
     else n
   }
 
+
   //use tailrec
   def findFirst[A](as: Array[A], p: A => Boolean): Int = {
     @annotation.tailrec
