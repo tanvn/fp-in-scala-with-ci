@@ -18,7 +18,6 @@ object Person {
 
   def main(args: Array[String]): Unit = {
     println(mkPerson("David", 24))
-
     println(mkPerson("", -2))
   }
 }
