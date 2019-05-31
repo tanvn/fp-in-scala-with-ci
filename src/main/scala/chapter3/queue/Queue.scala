@@ -21,6 +21,7 @@ private case class Node[T](value: Option[T], next: Option[Node[T]])
   //head
   override def head: Option[T] = value
 
+  //deque
   override def deQueue(): Node[T] = next.getOrElse(empty)
 
 }
