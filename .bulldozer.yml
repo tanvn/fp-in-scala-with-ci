@@ -16,3 +16,6 @@ merge:
 update:
   blacklist:
     labels: ["do-not-update"]
+  whitelist:
+    labels: ["update-me"]
+    comment_substrings: ["==MERGE_WHEN_READY=="]
