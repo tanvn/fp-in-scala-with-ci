@@ -6,7 +6,7 @@ sealed case class Age( value: Int)
 
 object Person {
   def mkName(name: String): Either[String, Name] =
-    if (name == "" || name == null) Left("Name is empty.")
+    if (name == "" || name == null) Left("Error! Name is empty.")
     else Right(new Name(name))
 
   def mkAge(age: Int): Either[String, Age] =
