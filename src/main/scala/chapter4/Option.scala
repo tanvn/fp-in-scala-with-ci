@@ -112,7 +112,7 @@ object Option {
     println(sequence(List(Some(10), Some(11), None, Some(1), Some(2))))
 
     println(parseInts(List("1", "2", "3")))
-    println(parseInts(List("1", "2", "3", "2a")))
+    println(parseInts(List("1", "2", "3", "2a", "3b")))
 
     println(traverse(List(1, 2, 3))(i => Some(i + 1)))
 
