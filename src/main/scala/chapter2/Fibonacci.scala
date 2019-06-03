@@ -50,7 +50,7 @@ object Fibonacci {
 
   def main(args: Array[String]): Unit = {
     println("Start")
-    println(fib(5))
+    println(fib(10))
     println("End")
 
     val test = Array(1, 3, 4, 5, 9, 10, 34, 21)
