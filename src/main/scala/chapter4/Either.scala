@@ -56,11 +56,12 @@ object Either {
   }
 
   def main(args: Array[String]): Unit = {
+
     println(saveDiv(10, 0))
 
     val testData1 = List(Right(1), Right(2), Right(3), Right(4))
     val testData2 =
-      List(Right(1), Right(2), Right(3), Left("Not a number"), Right(5))
+      List(Right(1), Right(2), Right(3), Left("Error! Not a number"), Right(5))
     val testData3 = List(1, 2, 3, 4, 5)
 
     println(sequence(testData1))
