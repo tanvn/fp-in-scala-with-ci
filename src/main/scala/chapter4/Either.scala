@@ -71,7 +71,7 @@ object Either {
       traverse(testData3)(
         v =>
           if (v % 2 == 0) Right(v / 2)
-          else Left("Not an even number")
+          else Left("Error! Not an even number")
       )
     )
 
