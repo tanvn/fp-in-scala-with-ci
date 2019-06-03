@@ -9,7 +9,7 @@ merge:
   options:
     squash:
       title: "pull_request_title"
-      body: "summarize_commits"
+      body: "empty_body"
   delete_after_merge: false
 
 update:
