@@ -10,10 +10,10 @@ merge:
     squash:
       title: "pull_request_title"
       body: "empty_body"
-  delete_after_merge: false
+  delete_after_merge: true
 
 update:
   blacklist:
-    labels: ["do-not-update"]
+    labels: ["do-not-update", "wip"]
   whitelist:
     labels: ["update-me"]
