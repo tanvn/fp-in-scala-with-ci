@@ -15,6 +15,7 @@ case class Success[+B](get: B) extends Partial[Nothing, B]
 
 object Partial {
 
+  //comment !!!
   def traverse[E, A, B](as: List[A])(f: A => Partial[E, B]): Partial[E, List[B]] = {
 
     def traverseWithErr(as: List[A], error: Seq[E], res: List[B])(
