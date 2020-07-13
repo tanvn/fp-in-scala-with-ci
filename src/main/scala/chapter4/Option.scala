@@ -74,7 +74,7 @@ object Option {
   def sequenceByTraverse[A](a: List[Option[A]]): Option[List[A]] =
     traverse(a)(a => a)
 
-  // 2 loops, not so good !!!
+  // 2 loops, not so good !!! !!!
 
   def traverse1[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] =
     sequence(a.map(e => f(e)))
