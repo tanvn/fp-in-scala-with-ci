@@ -33,7 +33,6 @@ object Partial {
   def main(args: Array[String]): Unit = {
 
     val testData1 = List(19, 29, 39, 40, 41, 60, 32)
-
     //test traverse
 
     println(
