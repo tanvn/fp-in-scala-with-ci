@@ -12,6 +12,6 @@ object ExceptionThrower {
   }
 
   def main(args: Array[String]): Unit =
-    failingFn(12)
+    failingFn(14)
 
 }
