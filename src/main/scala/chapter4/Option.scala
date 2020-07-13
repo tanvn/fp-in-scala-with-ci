@@ -79,7 +79,8 @@ object Option {
   def traverse1[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] =
     sequence(a.map(e => f(e)))
 
-  // one loop but recursive
+  // one loop but recursive test
+
   def traverse[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] = a match {
     case h :: tail => traverse(tail)(f).flatMap(l => f(h).map(_ :: l))
     case Nil       => Some(List.empty[B])
