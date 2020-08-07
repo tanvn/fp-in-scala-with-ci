@@ -35,7 +35,6 @@ object Partial {
 
     val testData1 = List(19, 29, 39, 40, 41, 60, 32)
     //test traverse
-
     println(
       traverse(testData1)(a =>
         if (a % 2 == 0) Success(a / 2)
